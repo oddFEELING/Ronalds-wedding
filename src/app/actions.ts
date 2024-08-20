@@ -1,13 +1,13 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { Supabase } from "@/utils/supabase/server";
 import { redirect, RedirectType } from "next/navigation";
 
 // ~ =============================================>
 // ~ ======= upload photos  -->
 // ~ =============================================>
 const upload_photo = async (file_path: string, full_path: string) => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
 
   const { data, error } = await client
     .from("site_photos")
@@ -25,7 +25,7 @@ const upload_photo = async (file_path: string, full_path: string) => {
 // ~ ======= get photo list  -->
 // ~ =============================================>
 const get_photos = async () => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
 
   const { data: photos, error } = await client.from("site_photos").select();
   if (error) throw new Error("Error getting photos");
@@ -37,7 +37,7 @@ const get_photos = async () => {
 // ~ ======= login user  -->
 // ~ =============================================>
 const login = async (email: string, password: string) => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
   const { error } = await client.auth.signInWithPassword({ email, password });
 
   if (error) throw new Error("Error Logging in");
@@ -48,7 +48,7 @@ const login = async (email: string, password: string) => {
 // ~ ======= Add a person  -->
 // ~ =============================================>
 const add_person = async (person_data: any) => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
   const { data: person, error } = await client
     .from("people")
     .insert(person_data)
@@ -66,7 +66,7 @@ const add_person = async (person_data: any) => {
 // ~ ======= get people list  -->
 // ~ =============================================>
 const get_people = async () => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
 
   const { data: people, error } = await client.from("people").select();
   if (error) {
@@ -80,7 +80,7 @@ const get_people = async () => {
 // ~ ======= delete a person  -->
 // ~ =============================================>
 const delete_person = async (id: string) => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
 
   const { data, error } = await client.from("people").delete().eq("id", id);
 

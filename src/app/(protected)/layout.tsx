@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { createClient } from "@/utils/supabase/server";
+import { Supabase } from "@/utils/supabase/server";
 import { redirect, RedirectType } from "next/navigation";
 
 type ComponentProps = {
@@ -7,7 +7,7 @@ type ComponentProps = {
 };
 
 const DashLayout: FC<ComponentProps> = async ({ children }) => {
-  const client = createClient();
+  const client = new Supabase().ssr_client();
   const {
     data: { user },
     error,

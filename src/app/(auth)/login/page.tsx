@@ -16,7 +16,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Particles from "@/components/modules/magic/particles";
 import Link from "next/link";
-import { createClient } from "@/utils/supabase/server";
 import { login } from "@/app/actions";
 
 type ComponentProps = {};

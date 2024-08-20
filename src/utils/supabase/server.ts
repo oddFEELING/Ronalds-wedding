@@ -1,29 +1,40 @@
-import { createServerClient } from "@supabase/ssr";
+import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 
-export const createClient = () => {
-  const cookieStore = cookies();
+// ~ ======= create client -->
+// I would consider this over-engineering but there might be a reason to add more
+// methods to this in the future.
+class Supabase {
+  private readonly url: string | undefined;
+  private readonly key: string | undefined;
 
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  constructor() {
+    // ~ ======= assign values -->
+    this.url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    this.key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  }
+
+  // ~ ======= server client -->
+  ssr_client() {
+    if (!this.key || !this.url)
+      throw new Error("Supabase env variables missing or not set correctly");
+    const cookie_store = cookies();
+    return createServerClient(this.url, this.key, {
       cookies: {
         getAll() {
-          return cookieStore.getAll();
+          return cookie_store.getAll();
         },
-        setAll(cookiesToSet) {
+        setAll(cookies_to_set) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) => {
-              cookieStore.set(name, value, options);
-            });
-          } catch (error) {
-            // The `set` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
-          }
+            cookies_to_set.forEach(({ name, value, options }) =>
+              cookie_store.set(name, value, options),
+            );
+          } catch {}
         },
       },
-    },
-  );
-};
+    });
+  }
+}
+
+export { Supabase };
