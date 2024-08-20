@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --foreground: 0 0% 18%; /* Deep Charcoal #2F2F2F */
+    --primary: 46 65% 53%; /* Regal Gold #D4AF37 */
+    --primary-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --secondary: 225 56% 36%; /* Royal Blue #2A4D9B */
+    --secondary-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --accent: 0 37% 67%; /* Dusty Rose #C08081 */
+    --accent-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --muted: 45 37% 84%; /* Pale Champagne #EAE0C8 */
+    --muted-foreground: 0 0% 18%; /* Deep Charcoal #2F2F2F */
+    --destructive: 0 100% 27%; /* Crimson Red #8B0000 */
+    --destructive-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --border: 45 58% 70%; /* Soft Gold #E8C96A */
+    --input: 45 37% 84%; /* Pale Champagne #EAE0C8 */
+    --ring: 46 65% 53%; /* Regal Gold #D4AF37 */
+    --radius: 0.5rem;
+    --chart-1: 30 70% 60%; /* Warm Coral #E07050 */
+    --chart-2: 210 50% 40%; /* Deep Teal #2A5D67 */
+    --chart-3: 315 50% 40%; /* Royal Plum #5C2A5D */
+    --chart-4: 45 100% 50%; /* Gold #FFD700 */
+    --chart-5: 270 40% 50%; /* Lavender #8A7FB9 */
+  }
+
+  .dark {
+    --background: 225 15% 20%; /* Deep Navy Blue #2A2A40 */
+    --foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --primary: 46 65% 53%; /* Regal Gold #D4AF37 */
+    --primary-foreground: 225 15% 20%; /* Deep Navy Blue #2A2A40 */
+    --secondary: 225 56% 36%; /* Royal Blue #2A4D9B */
+    --secondary-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --accent: 0 37% 67%; /* Dusty Rose #C08081 */
+    --accent-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --muted: 225 15% 30%; /* Slate Gray #3B3B58 */
+    --muted-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --destructive: 0 100% 27%; /* Crimson Red #8B0000 */
+    --destructive-foreground: 40 25% 94%; /* Ivory White #F8F5E1 */
+    --border: 45 58% 70%; /* Soft Gold #E8C96A */
+    --input: 225 15% 30%; /* Slate Gray #3B3B58 */
+    --ring: 46 65% 53%; /* Regal Gold #D4AF37 */
+    --chart-1: 30 70% 60%; /* Warm Coral #E07050 */
+    --chart-2: 210 50% 40%; /* Deep Teal #2A5D67 */
+    --chart-3: 315 50% 40%; /* Royal Plum #5C2A5D */
+    --chart-4: 45 100% 50%; /* Gold #FFD700 */
+    --chart-5: 270 40% 50%; /* Lavender #8A7FB9 */
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply text-[16px];
+  }
+}
+
+
+@layer components {
+  .transit {
+    @apply duration-300 ease-out transition-all;
+  }
+
+  .dash-page {
+    @apply w-full max-w-7xl flex flex-col min-h-dvh py-14 px-4 lg:px-10
+  }
+
+}
