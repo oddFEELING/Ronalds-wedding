@@ -30,52 +30,74 @@ const RootPage: FC<ComponentProps> = ({}) => {
       />
 
       {/* -- flower image */}
-      <div className="w-[450px] lg:w-[550px] xl:w-[600px]">
-        <AspectRatio ratio={16 / 10}>
-          <Image
-            src="/images/bg-image-1.png"
-            alt="hero img"
-            fill
-            className="object-center object-cver"
-          />
-        </AspectRatio>
-      </div>
+      {/*<div className="w-[450px] lg:w-[550px] xl:w-[600px]">*/}
+      {/*  <AspectRatio ratio={16 / 10}>*/}
+      {/*    <Image*/}
+      {/*      src="/images/bg-image-1.png"*/}
+      {/*      alt="hero img"*/}
+      {/*      fill*/}
+      {/*      className="object-center object-cver"*/}
+      {/*    />*/}
+      {/*  </AspectRatio>*/}
+      {/*</div>*/}
 
       {/* ####################################### */}
       {/* -- Header */}
       {/* ####################################### */}
-      <header className="w-full h-max min-h-[300px] flex flex-col gap-2 items-center relative -mt-20 lg:-mt-40 text-center">
-        <p className="font-text1 text-lg lg:text-xl">We are getting married</p>
-        <h1 className="font-text3 font-semibold text-5xl lg:text-7xl">
-          Ronald & Vanessa
-        </h1>
+      {/*<header className="w-full h-max min-h-[300px] flex flex-col gap-2 items-center relative -mt-20 lg:-mt-40 text-center">*/}
+      {/*  <p className="font-text1 text-lg lg:text-xl">We are getting married</p>*/}
+      {/*  <h1 className="font-text3 font-semibold text-5xl lg:text-7xl">*/}
+      {/*    Ronald & Vanessa*/}
+      {/*  </h1>*/}
 
-        {/* -- navbar */}
-        <TopAppNav />
+      {/*  /!* -- navbar *!/*/}
+      {/*  <TopAppNav />*/}
 
-        {/* -- hero image */}
-        <div
-          className=" w-full max-w-7xl flex mt-5 items-center justify-center relative rounded-lg md:rounded-xl overflow-hidden
-         shadow-xl"
-        >
-          <div className="w-[95%] h-[93%] rounded-lg border-2 border-white bg-transparent absolute z-10" />
-          <AspectRatio ratio={16 / 9}>
-            <Image
-              src="/images/image-1.jpeg"
-              alt=""
-              fill
-              className="object-cover"
-            />
-          </AspectRatio>
+      {/*  /!* -- hero image *!/*/}
+      {/*  <div*/}
+      {/*    className=" w-full max-w-7xl flex mt-5 items-center justify-center relative rounded-lg md:rounded-xl overflow-hidden*/}
+      {/*   shadow-xl"*/}
+      {/*  >*/}
+      {/*    <div className="w-[95%] h-[93%] rounded-lg border-2 border-white bg-transparent absolute z-10" />*/}
+      {/*    <AspectRatio ratio={16 / 9}>*/}
+      {/*      <Image*/}
+      {/*        src="/images/image-1.jpeg"*/}
+      {/*        alt=""*/}
+      {/*        fill*/}
+      {/*        className="object-cover"*/}
+      {/*      />*/}
+      {/*    </AspectRatio>*/}
+      {/*  </div>*/}
+      {/*</header>*/}
+      <header className="w-full h-[100dvh] flex relative items-center justify-center">
+        <Image
+          src="/images/image-4.jpeg"
+          alt=""
+          fill
+          className="object-cover"
+        />
+
+        <div className="relative h-full w-full flex items-center justify-center gap-12 flex-col bg-black/60">
+          <h1 className="font-text1 font-semibold text-white">
+            Ronald & Vanessa
+          </h1>
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-transparent border-white text-white px-20"
+          >
+            RSVP
+          </Button>
         </div>
       </header>
+      <TopAppNav />
 
       <main className="w-full flex flex-col items-center gap-5 mt-10 lg:py-20 relative px-5 md:px-10 lg:px-20">
-        <div className="w-32 xl:w-60 absolute right-0 top-10">
-          <AspectRatio ratio={8 / 16}>
-            <Image src="/images/bg-image-2.png" alt="bg-image-2" fill />
-          </AspectRatio>
-        </div>
+        {/*<div className="w-32 xl:w-60 absolute right-0 top-10">*/}
+        {/*  <AspectRatio ratio={8 / 16}>*/}
+        {/*    <Image src="/images/bg-image-2.png" alt="bg-image-2" fill />*/}
+        {/*  </AspectRatio>*/}
+        {/*</div>*/}
 
         {/* ####################################### */}
         {/* -- stats data section */}
@@ -219,16 +241,16 @@ const RootPage: FC<ComponentProps> = ({}) => {
         </Button>
       </main>
 
-      <div className="w-[450px] lg:w-[550px] xl:w-[550px] mt-5">
-        <AspectRatio ratio={16 / 10}>
-          <Image
-            src="/images/bg-image-3.png"
-            alt="footer img"
-            fill
-            className="object-center object-cver"
-          />
-        </AspectRatio>
-      </div>
+      {/*<div className="w-[450px] lg:w-[550px] xl:w-[550px] mt-5">*/}
+      {/*  <AspectRatio ratio={16 / 10}>*/}
+      {/*    <Image*/}
+      {/*      src="/images/bg-image-3.png"*/}
+      {/*      alt="footer img"*/}
+      {/*      fill*/}
+      {/*      className="object-center object-cver"*/}
+      {/*    />*/}
+      {/*  </AspectRatio>*/}
+      {/*</div>*/}
     </div>
   );
 };
